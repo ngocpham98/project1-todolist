@@ -1,0 +1,196 @@
+html{
+    height: 100vh;
+    background-image: linear-gradient(45deg, #ABC9FF 20%, #e66465 );
+    font-family: 'helvetica neue';
+}
+#logout{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    font-family: 'Rajdhani', 'helvetica neue';
+    font-weight: 550;
+    color: rgb(56, 53, 53);
+}
+#button{
+    border-radius: 50%;
+    border-color: transparent;
+    font-size: 30px;
+    width: 50px;
+    min-height: 50px;
+    background-color: #A683E3;;
+    color: #fff;
+    margin-right: 10px;
+}
+h1{
+    color: #fff;
+    padding: 15px;
+    font-size: 2.5rem;
+    font-family: 'Caveat', cursive;
+    margin-top: 90px;
+}
+.box{
+    max-width: 400px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+#heading{
+    background-color: #A683E3;
+    text-align: center;
+}
+.list-box{
+    min-height: 65px;
+   
+    display: flex;
+    align-items: center;
+
+}
+.list-box:last-child{
+    border-bottom: 0;
+}
+
+input:checked+p{
+    text-decoration: line-through;
+    text-decoration-color: #A683E3;
+}
+input[type="checkbox"]{
+    margin: 1rem;
+}
+input[type="text"]{
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    height: 60px;
+    font-weight: 200;
+    top: 10px;
+    width: 310px;
+    font-family: 'Rajdhani', 'helvetica neue';
+}
+input[type="text"]:focus{
+    outline:none;
+    box-shadow: inset 0 -3px #a466df;
+}
+p{
+    font-size: 1.55rem;
+    margin: auto;
+    margin-left: 20px;
+    padding: 20px;
+    font-weight: 200;
+    color: #00204a;
+    font-family: 'Rajdhani', 'helvetica neue';
+
+}
+form{
+    margin-left: 20px;
+    margin-right: 15px;
+    text-align: center;
+}
+
+.i{
+    border: none;
+    background-color: #fff;
+    
+    font-size: 1.25rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+textarea{
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    height: 32px;
+    font-weight: 200;
+    top: 10px;
+    width: 300px;
+    font-family: 'Rajdhani', 'helvetica neue';
+    margin-right: 10px;
+    resize: none;
+}
+textarea:focus{
+    outline:none;
+    box-shadow: inset 0 -3px #a466df;
+}
+.box1{
+    display: flex;
+    border-bottom: solid 1px #c4c0c0;
+}
+.box-icon{
+    margin: auto;
+    margin-right: 5px;
+    max-width: 30px;
+}
+footer{
+    position: fixed;
+    left: 50%;
+    top: 95%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* css for pop up */
+.modal{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: solid 1px #c4c0c0;
+    z-index: 10;
+    background: white;
+    border-radius: 8px;
+    padding: 5px;
+}
+.modal.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.modal-header{
+    display: flex;
+    padding: 10px 10px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px #c4c0c0;
+    font-family: sans-serif;
+}
+.title{
+    font-size: 1.2rem;
+    font-weight:500;
+}
+.X-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.3rem;
+
+}
+.a{
+    border: none;
+    background-color: #fff;
+    font-size: 1.4rem;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+.modal-body{
+    padding: 5px 10px;
+    display: flex;
+}
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.3);
+    pointer-events: none;
+    opacity: 0;
+}
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}

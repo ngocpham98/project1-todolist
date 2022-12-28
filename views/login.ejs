@@ -1,0 +1,26 @@
+<%- include('partials/header-login') %>
+
+<div class="container">
+  <h1>Login</h1>
+
+      <div class="form-container">
+          <form action="/login" method="POST">
+            <div class="column">
+              <label for="email" class="label">Email:</label>
+              <input type="email" name="username" class="input">
+            </div>
+            <div class="column">
+              <label for="password" class="label">Password:</label>
+              <input type="password" name="password" class="input">
+            </div>
+            <div class="button-log">
+            <button type="submit" name="login" class="login">Login</button>
+            <a  href="/register" role="button" class="register-link">Register</a>
+            </div>
+          </form>
+
+      </div>
+
+</div>
+
+<%- include('partials/footer') %>

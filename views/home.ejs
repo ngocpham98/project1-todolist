@@ -1,0 +1,77 @@
+<%- include('partials/header-home'); -%>
+    <a href="/logout" id="logout">Logout</a>
+    <div class="box" id="heading">
+        <h1><%= currentday %> list</h1>
+    </div>
+    <div class="box">
+        <% for(var i=0; i<items.length; i++){ %>
+            <div class="box1">
+                <form action="/delete" method="post" class="list-box">
+                    <input type="checkbox" name="checkbox" value="<%= items[i]._id %>" onchange="this.form.submit()">
+                    <p><%= items[i].name %></p>
+        
+                </form>
+                <div class="box-icon">
+                    <button class="fas fa-edit i" value="<%= items[i].name %>"></button> 
+                </div>
+                <form action="/update" method="post">
+                    <div class="modal" id="modal">
+                        <div class="modal-header">
+                            <div class="title">Edit task</div>
+                            <button class="X-button">&times;</button>
+                        </div>
+                    
+                        <div class="modal-body">
+                            <textarea name="updatecontent" class="textarea" cols="30"></textarea>
+                            <button type="submit" name="updateItem" value="<%= items[i]._id %>" class="fa-sharp fa-solid fa-circle-check a"></button>
+                        </div>
+                    </div>
+                    
+                </form>
+                <div id="overlay"></div>
+            </div>
+        <% } %>
+        
+        <form action="/" method="post" class="list-box">
+            <input type="text" name="newitem" placeholder="New-item" autocomplete="off">
+            <button id="button"type="submit" name="list">+</button>
+        </form>
+    </div>
+    
+    <!-- javascript for update pop up -->
+    <script>
+        const openModalButtons = document.querySelectorAll(".i");
+        const closeModalButtons = document.querySelector(".X-button");
+        const overlay = document.getElementById("overlay");
+        const textarea = document.querySelectorAll(".textarea");
+       
+        for (var i = 0; i < openModalButtons.length; i++) {
+            const text = textarea[i];
+            const modal = document.querySelectorAll(".modal")[i];
+            openModalButtons[i].addEventListener("click", function(){
+                openModal(modal);
+                const content = this.getAttribute('value');
+                text.innerHTML = content;
+                const end = text.value.length;
+                text.setSelectionRange(end, end);
+                text.focus();
+            })
+        }
+        closeModalButtons.addEventListener("click",() => {
+            const modal = document.querySelector(".modal");
+            closeModal(modal);
+        })
+       
+       function openModal(modal){
+            if(modal == null) return;
+            modal.classList.add("active");
+            overlay.classList.add("active");
+        }
+        function closeModal(modal){
+            if(modal == null) return;
+            modal.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+       
+    </script>
+<%- include('partials/footer'); -%>
