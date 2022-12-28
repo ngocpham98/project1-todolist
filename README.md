@@ -1,6 +1,6 @@
 ## Introduction
 
-This project is an basic todolist web written by nodejs
+This project is a basic todolist web written by nodejs
 
 ## Build Process
 
