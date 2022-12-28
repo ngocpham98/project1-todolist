@@ -1,6 +1,7 @@
 ## Introduction
 
-This project is a basic todolist web written by nodejs
+This project is a basic todolist web written by Node.js, Express, and MongoDB.
+Make sure you have the MongoDB server installed. You can find installation instructions at: https://www.mongodb.com/
 
 ## Build Process
 
