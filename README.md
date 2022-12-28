@@ -9,3 +9,4 @@ You can open the server with
 npm install
 ```
 node main.js
+```
